@@ -128,7 +128,7 @@ int main()
     }while(!exists_date(days, month, year));
 
     printf("\nDer Tag der Jahres %i ist %i\n", year, day_of_the_Year(days,month,year)); // Ausgabe
-    for (int i = 0; i < 8; i++)
+    for (int i = 0; i < sizeof(get_day_of_the_week(days, month, year)); i++)
     {
         printf("%c",get_day_of_the_week(days, month, year)[i]);
     }
