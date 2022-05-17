@@ -5,6 +5,7 @@
 **/
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int day_of_the_Year(int days, int month, int year)
 {
@@ -70,12 +71,43 @@ int exists_date(int days, int month, int year)
     return 0;
 }
 
+char* get_day_of_the_week(int days, int month, int year)
+{
+    int weekday = day_of_the_Year(days, month, year) % 7;
+    char* day;
+
+    switch(weekday)
+    {
+        case 0:
+            day = "Freitag";
+        break;
+        case 1:
+            day = "Samstag";
+        break;
+        case 2:
+            day = "Sonntag";
+        break;
+        case 3:
+            day = "Montag";
+        break;
+        case 4:
+            day = "Dienstag";
+        break;
+        case 5:
+            day = "Mittwoch";
+        break;
+        case 6:
+            day = "Donnerstag";
+        break;
+    }
+    return day;
+}
+
 int main()
 {
     int year;
     int month;
     int days;
-    int Tag_des_Jahres = 0;
 
     do
     {
@@ -95,5 +127,9 @@ int main()
 
     }while(!exists_date(days, month, year));
 
-    printf("\nDer Tag der Jahres %i ist %i", year, day_of_the_Year(days,month,year)); // Ausgabe
+    printf("\nDer Tag der Jahres %i ist %i\n", year, day_of_the_Year(days,month,year)); // Ausgabe
+    for (int i = 0; i < 8; i++)
+    {
+        printf("%c",get_day_of_the_week(days, month, year)[i]);
+    }
 }
