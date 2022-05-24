@@ -10,31 +10,29 @@
 
 int main()
 {
-    int year;
-    int month;
-    int days;
+    struct Date date1;
 
     do
     {
         printf("Geben sie ein Jahr ein: "); //Eingabe Jahr
-        scanf("%i", &year);
+        scanf("%i", &date1.year);
 
         printf("\nGeben sie einen Monat ein: "); //Eingabe Monat
-        scanf("%i", &month);
+        scanf("%i", &date1.month);
 
         printf("\nGeben sie einen Tag ein: "); // Eingabe Tage
-        scanf("%i", &days);
+        scanf("%i", &date1.days);
 
-        if(!exists_date(days, month, year)) // Prüfung ob das Datum existiert
+        if(!exists_date(date1)) // Prüfung ob das Datum existiert
         {
             printf("\nFalsche eingabe!\n versuchen sie es ernuert.\n");
         }
 
-    }while(!exists_date(days, month, year));
+    }while(!exists_date(date1));
 
-    printf("\nDer Tag der Jahres %i ist %i\n", year, day_of_the_Year(days,month,year)); // Ausgabe
-    for (int i = 0; i < sizeof(get_day_of_the_week(days, month, year)); i++)
+    printf("\nDer Tag der Jahres %i ist %i\n", date1.year, day_of_the_Year(date1)); // Ausgabe
+    for (int i = 0; i < sizeof(get_day_of_the_week(date1)); i++)
     {
-        printf("%c",get_day_of_the_week(days, month, year)[i]);
+        printf("%c",get_day_of_the_week(date1)[i]);
     }
 }

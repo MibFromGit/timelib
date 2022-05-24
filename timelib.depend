@@ -1,6 +1,12 @@
 # depslib dependency file v1.0
-1653378590 source:c:\users\pascal\documents\github repo\timelib\main.c
+1653381169 source:c:\users\pascal\documents\github repo\timelib\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"Bibliothek.h"
+
+1653381549 source:c:\users\pascal\documents\github repo\timelib\bibliothek.c
+	"Bibliothek.h"
+
+1653381369 c:\users\pascal\documents\github repo\timelib\bibliothek.h
 
