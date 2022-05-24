@@ -31,8 +31,6 @@ int main()
     }while(!exists_date(date1));
 
     printf("\nDer Tag der Jahres %i ist %i\n", date1.year, day_of_the_Year(date1)); // Ausgabe
-    for (int i = 0; i < sizeof(get_day_of_the_week(date1)); i++)
-    {
-        printf("%c",get_day_of_the_week(date1)[i]);
-    }
+
+    printf("Wochentag: %i",get_day_of_the_week(date1));
 }

@@ -64,11 +64,11 @@ int exists_date(struct Date date1)
     return 0;
 }
 
-char* get_day_of_the_week(struct Date date1)
+int get_day_of_the_week(struct Date date1)
 {
-    int weekday = (date1.days += date1.month < 3 ? date1.year-- : date1.year - 2, 23*date1.month/9 + date1.days + 4 + date1.year/4- date1.year/100 + date1.year/400)%7;
+    int weekday = (date1.days += date1.month < 3 ? date1.year-- : date1.year - 2, 23 * date1.month/9 + date1.days + 4 + date1.year/4- date1.year/100 + date1.year/400)%7;
 
-    char* tempweekday[7] = {"Sonntag", "Monatag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"};
+    int tempweekday[7] = {7, 1, 2, 3, 4, 5, 6};
 
     return tempweekday[weekday];
 }

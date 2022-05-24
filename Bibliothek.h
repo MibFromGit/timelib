@@ -12,4 +12,4 @@ int get_days_for_months(struct Date);
 
 int exists_date(struct Date);
 
-char* get_day_of_the_week(struct Date);
+int get_day_of_the_week(struct Date);
