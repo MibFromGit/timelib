@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1652767972 source:c:\users\pascal\documents\github repo\timelib\main.c
+1653378590 source:c:\users\pascal\documents\github repo\timelib\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
