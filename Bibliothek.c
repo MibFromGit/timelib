@@ -3,10 +3,9 @@
 int day_of_the_Year(struct Date date1)
 {
     int tempdays = 0; // deklaration einer temporären Variable
-    int tempmonth; // initialisierung einer Temporären Variable
     for (int i = 0; i < date1.month - 1; i++) // For-Schleife um die Tage im Monat zu bekommen
     {
-        tempmonth = i + 1;
+        date1.tempmonth = i;
         tempdays += get_days_for_months(date1);
     }
     return tempdays += date1.days;
@@ -42,9 +41,9 @@ int get_days_for_months(struct Date date1)
     {
         tage_pro_monat[1] = 29;
     }
-    if (date1.month < 13 && date1.year > 0) // Validierung des Monats
+    if (date1.month < 13 && date1.month > 0) // Validierung des Monats
     {
-        return tage_pro_monat[date1.month - 1];
+        return tage_pro_monat[date1.tempmonth];
     }
     return -1;// Ausgabe falls Parameter nicht gültig sind
 }

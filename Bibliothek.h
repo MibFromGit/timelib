@@ -2,6 +2,7 @@ struct Date {
     int year;
     int month;
     int days;
+    int tempmonth;
 };
 
 int day_of_the_Year(struct Date);

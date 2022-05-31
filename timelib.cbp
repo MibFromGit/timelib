@@ -31,13 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Bibliothek.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Bibliothek.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
