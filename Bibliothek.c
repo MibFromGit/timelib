@@ -1,5 +1,8 @@
 #include "Bibliothek.h"
 
+/**
+die Methode bekommt ein struct als Parameter und berechnet dann die der wievielte tag im Jahr das Datum ist und gibt diese Zahl zurück
+**/
 int day_of_the_Year(struct Date date1)
 {
     int tempdays = 0; // deklaration einer temporären Variable
@@ -11,6 +14,10 @@ int day_of_the_Year(struct Date date1)
     return tempdays += date1.days;
 }
 
+/**
+hier wird geprüft ob das übergebene Jahr ein Schaltjahr ist und gibt -1 zurück wenn das Jahr nicht existiert,
+0 wenn es kein Schlatjahr ist und 1 wenn es ein Schaltjahr ist
+**/
 int is_leapyear(int year)
 {
     if(year < 1582) //prüfung ob das Jahr im gregoreanischen Kalender existiert
@@ -32,7 +39,9 @@ int is_leapyear(int year)
     return 0; //Ist kein Schaltjahr
 }
 
-
+/**
+Gibt die anzahl der Tage im Monat zurück
+**/
 int get_days_for_months(struct Date date1)
 {
     int tage_pro_monat[12] = {31,28,31,30,31,30,31,31,30,31,30,31}; //Deklaration des Arrays
@@ -48,6 +57,9 @@ int get_days_for_months(struct Date date1)
     return -1;// Ausgabe falls Parameter nicht gültig sind
 }
 
+/**
+Prüft ob das angegebene Datum existiert und gibt 1 zurück wenn es existiert und 0 wenn es nicht existiert
+**/
 int exists_date(struct Date date1)
 {
     if (date1.year > 1582) // Prüfen ob das Jahr existiert
@@ -63,6 +75,9 @@ int exists_date(struct Date date1)
     return 0;
 }
 
+/**
+Gibt den Wochentag zurück an dem das Datum ist
+**/
 int get_day_of_the_week(struct Date date1)
 {
     int weekday = (date1.days += date1.month < 3 ? date1.year-- : date1.year - 2, 23 * date1.month/9 + date1.days + 4 + date1.year/4- date1.year/100 + date1.year/400)%7;
